@@ -1,0 +1,54 @@
+{
+	"name"                 : "coco-project/macroable",
+	"description"          : "Provide a trait that dynamically injects a specified method or closure into a specified object during runtime execution.",
+	"type"                 : "library",
+	"license"              : "MIT",
+	"minimum-stability"    : "dev",
+	"require"              : {
+		"php" : ">=8.0"
+	},
+	"autoload"             : {
+		"psr-4" : {
+			"Coco\\macroable\\" : "src/",
+			"Coco\\examples\\"  : "examples/"
+		}
+	},
+	"require-dev"          : {
+		"phpstan/phpstan"           : "1.11.x-dev",
+		"phpunit/phpunit"           : "9.6.x-dev",
+		"squizlabs/php_codesniffer" : "4.0.x-dev"
+	},
+	"autoload-dev"         : {
+		"psr-4" : {
+			"Coco\\Tests\\Unit\\" : "tests/Unit"
+		}
+	},
+	"scripts"              : {
+		"test"        : "./vendor/phpunit/phpunit/phpunit ",
+		"analyse"     : "./vendor/bin/phpstan analyse -vvv --error-format=table > .phpstan.txt",
+		"check-style" : "./vendor/squizlabs/php_codesniffer/bin/phpcs  -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests",
+		"fix-style"   : "./vendor/squizlabs/php_codesniffer/bin/phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests",
+		"run-test"    : [
+			"@test",
+			"@fix-style",
+			"@analyse"
+		]
+	},
+	"scripts-descriptions" : {
+		"test"        : "执行单元测试",
+		"check-style" : "phpcs 检查代码格式",
+		"fix-style"   : "phpcbf 修复代码格式",
+		"analyse"     : "运行phpstan 分析代码",
+		"run-test"    : "执行 test，fix-style，analyse"
+	},
+	"config"               : {
+		"sort-packages" : true,
+		"allow-plugins" : {
+			"symfony/flex"                : true,
+			"phpstan/extension-installer" : true
+		},
+		"platform"      : {
+			"php" : "8.0"
+		}
+	}
+}

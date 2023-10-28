@@ -67,3 +67,9 @@ You can add a new method to a class using `injectMethod`:
 ``` bash
 composer test
 ```
+
+## License
+
+---
+
+The MIT License (MIT).

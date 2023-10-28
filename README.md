@@ -72,4 +72,4 @@ composer test
 
 ---
 
-The MIT License (MIT).
+MIT

@@ -35,11 +35,11 @@
 		]
 	},
 	"scripts-descriptions" : {
-		"test"        : "执行单元测试",
-		"check-style" : "phpcs 检查代码格式",
-		"fix-style"   : "phpcbf 修复代码格式",
-		"analyse"     : "运行phpstan 分析代码",
-		"run-test"    : "执行 test，fix-style，analyse"
+		"test"        : "Run unit tests",
+		"check-style" : "Check code formatting with phpcs",
+		"fix-style"   : "Fix code formatting with phpcbf",
+		"analyse"     : "Run code analysis with phpstan",
+		"run-test"    : "Execute test, fix-style, and analyse"
 	},
 	"config"               : {
 		"sort-packages" : true,

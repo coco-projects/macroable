@@ -33,7 +33,7 @@
 You can install the package via composer:
 
 ```bash
-composer require coco-project/macroable
+composer require coco-project/macroable --no-dev
 ```
 
 ## Usage
